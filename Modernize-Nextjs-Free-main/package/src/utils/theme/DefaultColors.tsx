@@ -12,10 +12,11 @@ const baselightTheme = createTheme({
   direction: "ltr",
   palette: {
     primary: {
-      main: "#5D87FF",
-      light: "#ECF2FF",
-      dark: "#4570EA",
+      main: "#4CAF50", // Main green color (standard Material-UI green)
+      light: "#E8F5E9", // Light green shade
+      dark: "#388E3C", // Dark green shade
     },
+    
     secondary: {
       main: "#49BEFF",
       light: "#E8F7FF",

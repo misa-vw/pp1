@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import {
   CardContent,
@@ -7,46 +6,41 @@ import {
   Rating,
   Tooltip,
   Fab,
-  Avatar
+  Avatar,
 } from "@mui/material";
-// import img1 from "public/images/products/s4.jpg";
-// import img2 from "public/images/products/s5.jpg";
-// import img3 from "public/images/products/s7.jpg";
-// import img4 from "public/images/products/s11.jpg";
 import { Stack } from "@mui/system";
 import { IconBasket } from "@tabler/icons-react";
 import BlankCard from "@/app/(DashboardLayout)/components/shared/BlankCard";
-import Image from "next/image";
 
 const ecoCard = [
   {
-    title: "Boat Headphone",
+    title: "Almond Tree",
     subheader: "September 14, 2023",
-    photo: '/images/products/s4.jpg',
+    photo: '/images/products/almond-tree.jpg',
     salesPrice: 375,
     price: 285,
     rating: 4,
   },
   {
-    title: "MacBook Air Pro",
+    title: "Cedar Tree",
     subheader: "September 14, 2023",
-    photo: '/images/products/s5.jpg',
+    photo: '/images/products/cedar-tree.jpg',
     salesPrice: 650,
     price: 900,
     rating: 5,
   },
   {
-    title: "Red Valvet Dress",
+    title: "Eucalyptus Tree",
     subheader: "September 14, 2023",
-    photo: '/images/products/s7.jpg',
+    photo: '/images/products/eucalyptus-tree.jpg',
     salesPrice: 150,
     price: 200,
     rating: 3,
   },
   {
-    title: "Cute Soft Teddybear",
+    title: "Olive Tree",
     subheader: "September 14, 2023",
-    photo: '/images/products/s11.jpg',
+    photo: '/images/products/olive-tree.jpg',
     salesPrice: 285,
     price: 345,
     rating: 2,
@@ -61,19 +55,26 @@ const Blog = () => {
           <BlankCard>
             <Typography component={Link} href="/">
               <Avatar
-                src={product.photo} variant="square"
+                src={product.photo}
+                variant="square"
                 sx={{
                   height: 250,
-                  width: '100%',
+                  width: "100%",
                 }}
-                
               />
             </Typography>
-            <Tooltip title="Add To Cart">
+            <Tooltip title="Adopt Tree">
               <Fab
                 size="small"
                 color="primary"
-                sx={{ bottom: "75px", right: "15px", position: "absolute" }}
+                // Highlighted: Updated the `component` and `href` for navigation
+                component={Link}
+                href={`/adopt-tree/AdoptForm`} // Dynamic link based on tree title
+                sx={{
+                  bottom: "75px",
+                  right: "15px",
+                  position: "absolute",
+                }}
               >
                 <IconBasket size="16" />
               </Fab>
@@ -87,21 +88,8 @@ const Blog = () => {
                 mt={1}
               >
                 <Stack direction="row" alignItems="center">
-                  <Typography variant="h6">${product.price}</Typography>
-                  <Typography
-                    color="textSecondary"
-                    ml={1}
-                    sx={{ textDecoration: "line-through" }}
-                  >
-                    ${product.salesPrice}
-                  </Typography>
+                  <Typography variant="h7">{product.price} Adopted</Typography>
                 </Stack>
-                <Rating
-                  name="read-only"
-                  size="small"
-                  value={product.rating}
-                  readOnly
-                />
               </Stack>
             </CardContent>
           </BlankCard>

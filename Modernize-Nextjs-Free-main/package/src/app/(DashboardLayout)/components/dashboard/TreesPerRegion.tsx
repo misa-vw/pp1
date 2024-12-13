@@ -13,47 +13,39 @@ import DashboardCard from '@/app/(DashboardLayout)//components/shared/DashboardC
 const products = [
     {
         id: "1",
-        name: "Sunil Joshi",
-        post: "Web Designer",
-        pname: "Elite Admin",
+        pname: "Ifrane",
         priority: "Low",
         pbg: "primary.main",
-        budget: "3.9",
+        budget: "1355",
     },
     {
         id: "2",
-        name: "Andrew McDownland",
-        post: "Project Manager",
-        pname: "Real Homes WP Theme",
+        pname: "Tangier",
         priority: "Medium",
         pbg: "secondary.main",
-        budget: "24.5",
+        budget: "1000",
     },
     {
         id: "3",
-        name: "Christopher Jamil",
-        post: "Project Manager",
-        pname: "MedicalPro WP Theme",
+        pname: "Rabat",
         priority: "High",
         pbg: "error.main",
-        budget: "12.8",
+        budget: "550",
     },
     {
         id: "4",
-        name: "Nirav Joshi",
-        post: "Frontend Engineer",
-        pname: "Hosting Press HTML",
+        pname: "Marrakech",
         priority: "Critical",
         pbg: "success.main",
-        budget: "2.4",
+        budget: "450",
     },
 ];
 
 
-const ProductPerformance = () => {
+const TreesPerRegion = () => {
     return (
 
-        <DashboardCard title="Product Performance">
+        <DashboardCard title="Trees Per Region">
             <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' } }}>
                 <Table
                     aria-label="simple table"
@@ -66,17 +58,12 @@ const ProductPerformance = () => {
                         <TableRow>
                             <TableCell>
                                 <Typography variant="subtitle2" fontWeight={600}>
-                                    Id
                                 </Typography>
                             </TableCell>
+                            
                             <TableCell>
                                 <Typography variant="subtitle2" fontWeight={600}>
-                                    Assigned
-                                </Typography>
-                            </TableCell>
-                            <TableCell>
-                                <Typography variant="subtitle2" fontWeight={600}>
-                                    Name
+                                    Region
                                 </Typography>
                             </TableCell>
                             <TableCell>
@@ -93,7 +80,7 @@ const ProductPerformance = () => {
                     </TableHead>
                     <TableBody>
                         {products.map((product) => (
-                            <TableRow key={product.name}>
+                            <TableRow key={product.pname}>
                                 <TableCell>
                                     <Typography
                                         sx={{
@@ -103,28 +90,6 @@ const ProductPerformance = () => {
                                     >
                                         {product.id}
                                     </Typography>
-                                </TableCell>
-                                <TableCell>
-                                    <Box
-                                        sx={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                        }}
-                                    >
-                                        <Box>
-                                            <Typography variant="subtitle2" fontWeight={600}>
-                                                {product.name}
-                                            </Typography>
-                                            <Typography
-                                                color="textSecondary"
-                                                sx={{
-                                                    fontSize: "13px",
-                                                }}
-                                            >
-                                                {product.post}
-                                            </Typography>
-                                        </Box>
-                                    </Box>
                                 </TableCell>
                                 <TableCell>
                                     <Typography color="textSecondary" variant="subtitle2" fontWeight={400}>
@@ -143,7 +108,7 @@ const ProductPerformance = () => {
                                     ></Chip>
                                 </TableCell>
                                 <TableCell align="right">
-                                    <Typography variant="h6">${product.budget}k</Typography>
+                                    <Typography variant="h6">{product.budget}</Typography>
                                 </TableCell>
                             </TableRow>
                         ))}
@@ -154,4 +119,4 @@ const ProductPerformance = () => {
     );
 };
 
-export default ProductPerformance;
+export default TreesPerRegion;
